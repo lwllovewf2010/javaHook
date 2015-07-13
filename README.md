@@ -32,4 +32,4 @@ Extract the part of JavaHook in the Xposed. Usage: Inject one process to load li
 		  Hook.cb_interceptKeyBeforeQueueing.beforeHookedMethod(param);	
 </pre>
 <br />
-![image](https://github.com/phoebe1990/javaHook/1.jpg)
+![image](https://github.com/phoebe1990/javaHook/blob/master/1.jpg)
