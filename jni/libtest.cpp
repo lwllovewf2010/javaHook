@@ -14,8 +14,8 @@ using namespace android;
 #ifndef INJECT_JAR_PATH
 #define INJECT_JAR_PATH "/system/framework/hook.jar"
 #endif
-#ifndef CLASS_JIAGUANJI
-#define CLASS_JIAGUANJI "com.phoebe.javaHook.Hook"
+#ifndef CLASS_JAVA
+#define CLASS_JAVA "com.phoebe.javaHook.Hook"
 #endif
 
 static const char JSTRING[] = "Ljava/lang/String;";
@@ -61,7 +61,7 @@ void HookJava()
 	check_value(class_loader);
 
 	jobject dex_loader_obj = env->NewObject(dexloader_claxx, dexloader_init_method, apk_path, dex_out_path, NULL, class_loader);
-	jstring class_name = env->NewStringUTF(CLASS_JIAGUANJI);
+	jstring class_name = env->NewStringUTF(CLASS_JAVA);
 	jclass class_jia = static_cast<jclass>(env->CallObjectMethod(dex_loader_obj, loadClass_method, class_name));
 	check_value(class_jia);
 
